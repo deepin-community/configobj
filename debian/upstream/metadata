@@ -1,0 +1,10 @@
+---
+Bug-Database: https://github.com/DiffSK/configobj/issues
+Bug-Submit: https://github.com/DiffSK/configobj/issues/new
+Changelog: https://configobj.readthedocs.io/en/latest/configobj.html#changelog
+Documentation: https://configobj.readthedocs.io/en/latest/
+Registry:
+  - Name: PyPI
+    Entry: configobj
+Repository: https://github.com/DiffSK/configobj.git
+Repository-Browse: https://github.com/DiffSK/configobj

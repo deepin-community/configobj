@@ -1,4 +1,25 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+export PYBUILD_NAME=configobj
 
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
+
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
+execute_after_dh_auto_clean:
+	make -C docs clean
+
+execute_after_dh_auto_build:
+	make -C docs html
+endif
+
+override_dh_auto_test:
+	dh_auto_test -- --test-pytest --test-args "$(CURDIR)/src/tests"
+
+override_dh_compress:
+	dh_compress -X.js
+
+override_dh_installdocs:
+	dh_installdocs -p python-configobj-doc --doc-main-package=python-configobj-doc
+	dh_installdocs --remaining-packages

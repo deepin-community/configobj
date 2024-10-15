@@ -1,5 +1,386 @@
-template-repository (1.0-1) unstable; urgency=medium
+configobj (5.0.9-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream point-release.
+  * Drop patches, superseded upstream.
+  * Bump copyright years.
+  * Bump Standards-Version to 4.7.0, no changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 22 Sep 2024 20:47:30 +0200
+
+configobj (5.0.8-3) unstable; urgency=medium
+
+  * Team upload.
+  * remove obsolete dependency on python3-mock
+
+  [ Jelmer Vernooĳ ]
+  * remove obsolete dependency on python3-six
+
+ -- Alexandre Detiste <tchet@debian.org>  Mon, 08 Jan 2024 00:59:06 +0100
+
+configobj (5.0.8-2) unstable; urgency=medium
+
+  * Patch: Resolve CVE-2023-26112, a Regular Expression Denial of Service
+    attack. (Closes: #1034152)
+  * Clean correctly.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 03 Jun 2023 16:23:41 -0400
+
+configobj (5.0.8-1) unstable; urgency=medium
+
+  * New upstream release!
+  * Switch back to upstream releases, they've releasing again.
+  * Update copyright.
+  * Drop the separate setup_validate.py build, no longer needed.
+  * Build with pybuild's pyproject plugin.
+  * Bump Standards-Version to 4.6.2, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 26 Jan 2023 18:57:36 -0400
+
+configobj (5.0.6+git20201014.3e2f4cc-1) unstable; urgency=medium
+
+  * New upstream git source.
+  * Fetch from git HEAD, as upstream hasn't released in years.
+    - Migrates towards a configobj module. (Closes: #1016467)
+    - Declare Breaks cloud-init (<< 22.3), as it used a private API that has
+      been removed.
+  * Build the separate setup_validate.py, too.
+  * Drop patches, superseded upstream.
+  * Update src test location.
+  * Build-Depend on python3-mock and python3-sphinx-rtd-theme, now required
+    upstream.
+  * Support nodoc and nocheck build profiles.
+  * Bump Standards-Version to 4.6.1, no changes needed.
+  * Update copyright.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 14 Dec 2022 19:45:33 -0400
+
+configobj (5.0.6-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Apply multi-arch hints.
+    + python-configobj-doc: Add Multi-Arch: foreign.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Stefano Rivera ]
+  * Add Changelog and Registry to upstream metadata.
+  * Bump Standards-Version to 4.6.0, no changes needed.
+  * Bump copyright years.
+  * Bump watch file version to 4.
+  * Document upstream status on patches.
+
+  [ Helmut Grohne ]
+  * Mark all packages Multi-Arch: foreign. (Closes: #984813)
+
+  [ Jelmer Vernooĳ ]
+  * Bump debhelper from old 12 to 13.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 30 Sep 2021 13:21:13 -0700
+
+configobj (5.0.6-4) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set upstream metadata fields: Contact, Name.
+  * Remove obsolete fields Name, Contact from debian/upstream/metadata.
+  * Set upstream metadata fields: Repository.
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #936325
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 04 Apr 2020 18:57:38 -0400
+
+configobj (5.0.6-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/control: Remove XS-Testsuite field, not needed anymore
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Piotr Ożarowski ]
+  * Add dh-python to Build-Depends
+
+  [ Stefano Rivera ]
+  * Bump debhelper compat to 11.
+  * Drop get-orig-source, no longer used.
+  * Drop python-epydoc B-D, no longer used. (Closes: #881545)
+  * Declare Rules-Requires-Root: no.
+  * Bump Standards-Version to 4.2.1, no changes needed.
+  * Round-trip patches through PQ.
+  * Bump copyright years.
+  * Build Sphinx docs with python3-sphinx.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 27 Aug 2018 13:47:26 +0100
+
+configobj (5.0.6-2) unstable; urgency=medium
+
+  * Team upload.
+  * debian/control: Bump Standards-Version with no other changes needed.
+
+ -- Barry Warsaw <barry@debian.org>  Fri, 17 Jul 2015 12:16:30 -0400
+
+configobj (5.0.6-1) unstable; urgency=medium
+
+  * Team upload.
+  * Update watch file to point to GitHub releases.
+  * Bump Standards-Version to 3.9.5
+  * Use the pybuild buildsystem.
+  * Release a package for Python 3. (Closes: #660172)
+  * Refresh eggify.diff
+  * Drop report-doctest-failure.diff and py27-test.diff (fixed upstream).
+  * Disable triplequotes.diff (fail to apply).
+  * Fix deprecation warning test case.
+  * Adjust autopkgtests to run pytest for Python 2.x and 3.x.
+  * Move documentation into separate package and build Sphinx documentation.
+  * Update debian/copyright
+
+ -- Benjamin Drung <benjamin.drung@profitbricks.com>  Thu, 28 Aug 2014 18:42:29 +0200
+
+configobj (4.7.2+ds-5) unstable; urgency=low
+
+  [ Stefano Rivera ]
+  * Replace Daniel Watkins as the Maintainer, with the Debian Python Modules
+    Team, at the request of the MIA team (Closes: #705273)
+  * Add autopkgtests.
+  * Bump Standards-Version to 3.9.4.
+    - Bump B-D on debhelper to 8.1, for build-{arch,indep} support.
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 26 May 2013 01:04:56 +0200
+
+configobj (4.7.2+ds-4) unstable; urgency=low
+
+  * Clean correctly (Closes: #671312)
+    - Remove .egg-info
+    - Remove generated API documentation.
+  * Update machine-readable copyright file format to 1.0.
+  * Bump Standards-Version to 3.9.3, no changes needed.
+  * Move "docs" contents to a subdirectory in /usr/share/doc/python-configobj.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 03 May 2012 14:47:52 +0200
+
+configobj (4.7.2+ds-3) unstable; urgency=low
+
+  * Rebuild for Python transition.
+  * Remove Breaks: ${python:Breaks}, no longer used by dh_python2.
+  * Bump Standards-Version to 3.9.2 (no changes needed).
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 16 Apr 2011 09:28:21 +0200
+
+configobj (4.7.2+ds-2) unstable; urgency=low
+
+  [ Stefano Rivera ]
+  * Don't leak uid and umask into source tarball and set -e.
+  * Bumped Standards-Version to 3.9.1 (no changes needed).
+  * Enable test suites.
+    - Build Depend on python-all, python-unittest2.
+    - New patch: report-doctest-failure.diff: Fail on failures.
+    - New patch: py27-test.diff: Convert float-comparing doctests to unit
+      tests.
+  * Wrap long lines in debian/control.
+  * Merge Build-Depends-Indep into Build-Depends (no arch-dependant packages).
+  * Switch to dh_python2
+    - Use X-Python-Version (requires python-all >= 2.6.5-13~).
+    - Use ${python:Breaks}.
+  * Update my e-mail address.
+  * Use DEP5 format in debian/copyright.
+
+  [ Jelmer Vernooij ]
+  * Properly handle triple quotes. Closes: #618349, LP: #710410
+  * Add myself to uploaders.
+
+ -- Jelmer Vernooij <jelmer@debian.org>  Wed, 16 Mar 2011 11:17:14 +0100
+
+configobj (4.7.2+ds-1) unstable; urgency=low
+
+  * New upstream release.
+  * +ds version, as release zip file contains root-level __MACOSX directory.
+  * Added get-orig-source rule to debian/rules
+
+ -- Stefano Rivera <stefano@rivera.za.net>  Fri, 05 Mar 2010 21:12:23 +0200
+
+configobj (4.7.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefano@rivera.za.net>  Tue, 16 Feb 2010 07:59:06 +0200
+
+configobj (4.7.0-1) unstable; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Stefano Rivera ]
+  * New upstream release. (Closes: 555407)
+  * Package under team maintenance. (Closes: 544448)
+  * Bumped Standards-Version to 3.8.4 (no changes needed).
+  * Converted to 3.0 (quilt)
+  * debian/rules
+    - Converted to debhelper 7 overrides
+    - Don't compress epydoc.js
+  * Patches:
+    - 01_eggify.dpatch converted to eggify.diff (quilt+DEP3).
+    - 02_doc_generation_fix.dpatch removed (fixed upstream)
+  * debain/control
+    - Unversioned python-setuptools dependency (oldstable has a suitable
+      version)
+    - Removed unecessary XB-Python-Version.
+    - Minor changes to description.
+  * debian/copyright
+    - Updated years and added author Mark Andrews.
+    - Included full license, as it isn't identical to the common-licenses one.
+  * debian/watch
+    - Switched from sf.net to author's homepage, as redirector can't see
+      4.7.0.
+
+ -- Stefano Rivera <stefano@rivera.za.net>  Mon, 01 Feb 2010 01:34:21 +0200
+
+configobj (4.5.3-1) experimental; urgency=low
+
+  * New upstream release.
+  * Adopting. (Closes: #493792)
+  * Switched from using CDBS to debhelper 7.
+  * Patches:
+    + Converted 01_eggify.diff to 01_eggify.dpatch.
+    + Added 02_doc_generation_fix.dpatch, which allows the documentation to
+      build.
+  * Bumped Standards-Version to 3.8.0.
+  * Added python-docutils to Build-Depends-Indep.
+
+ -- Daniel Watkins <daniel@daniel-watkins.co.uk>  Sat, 20 Sep 2008 11:50:33 +0100
+
+configobj (4.5.2-2) unstable; urgency=low
+
+  * Orphaning.
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Sat, 10 May 2008 16:36:12 -0300
+
+configobj (4.5.2-1) unstable; urgency=low
+
+  [ Piotr Ożarowski ]
+  * Homepage field added
+  * Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now)
+
+  [ Sandro Tosi ]
+  * debian/control
+    - added Vcs-Browser
+
+  [ Gustavo Noronha Silva ]
+  * New upstream release
+  * debian/rules:
+  - configobj no longer provides an oddly-named changelog;
+  * debian/rules, debian/python-configobj.install:
+  - make sure to install all the useful stuff that now lives in
+    doc/
+  * debian/python-configobj.doc-base.api:
+  - fixed Section to conform to the doc-base manual specifications
+  * debian/control:
+  - updated standards version to 3.7.3
+  - no longer build-depend on a -1 revision for setuptools
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Sat, 10 May 2008 16:32:05 -0300
+
+configobj (4.4.0-2) unstable; urgency=low
+
+  [Gustavo Noronha Silva]
+  * debian/control:
+  - remove duplicated line from the description (Closes: #423188)
+  * debian/rules:
+  - use full-named arguments for epydoc; thanks to Cyril Brulebois
+    <cyril.brulebois@enst-bretagne.fr> for pointing out the fix;
+    (Closes: #433744)
+
+  [Piotr Ożarowski]
+  * New python-support handles egg's directory name correctly
+  * bump python-support required version
+  * remove mv part from debian/rules
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Thu, 09 Aug 2007 21:37:04 -0300
+
+configobj (4.4.0-1) unstable; urgency=low
+
+  [ Piotr Ozarowski ]
+  * Added XS-Vcs-Svn field
+
+  [ Gustavo Noronha Silva ]
+  * New upstream release
+  * debian/control:
+  - moved python-dev and python-support from build-deps-indep
+    to build-deps, since they are needed to satisfy clean
+    target
+  - replaced python-dev with python-all-dev (>= 2.3.5-11), following
+    the wiki NewPolicy documentation
+  - updated python-support version requirement to 0.5.3, also according
+    to the NewPolicy documentation
+  * debian/pycompat:
+  - removed, according to the NewPolicy on wiki
+  * debian/patches/00_eggify.diff:
+  - updated to the new version
+  * debian/rules, debian/control:
+  - use epydoc to generate the API documentation, since it is not included
+    in this release's zip file; this adds epydoc as a build-dep-indep
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Sat, 21 Apr 2007 12:33:54 -0300
+
+configobj (4.3.2-2) unstable; urgency=low
+
+  * debian/rules:
+  - rename the egg info directory so that easy_install and others
+    will not ignore it because there is a python version number
+    (Closes: #373935)
+  * debian/pycompat:
+  - added; track policy version
+  * debian/control, debian/rules:
+  - updated to python-support 0.3
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Fri, 23 Jun 2006 15:47:24 -0300
+
+configobj (4.3.2-1) unstable; urgency=low
+
+  * New upstream version
+  * Supports the New Policy -- see specific changes below
+    (Closes: #373309)
+  * debian/patches/00_eggify.diff:
+  - updated; there's no need to include ez_update; all we need to do is
+    use setuptool's setup function instead of distutil's
+  * debian/control:
+  - moved python and python-setuptools to Build-Depends, since they
+    are needed in the clean target
+  - increased Standards-Version to 3.7.2 with no changes
+  - build-depend on the versions of cdbs, debhelper and python-support
+    which implement the new Python Policy
+  - add the python X-headers, and replaced the Dependencies with a
+    substitution variable that will be filled by the packaging tools
+  - added Provides to provide all the version specific virtual packages
+  * debian/python-configobj.{postinst,prerm}:
+  - removed; will be created automatically by dh_pysupport
+  * debian/rules:
+  - removed hack to avoid calling dh_python: it will now help instead
+    of mess
+  * debian/watch:
+  - added to monitor new versions
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Thu, 15 Jun 2006 18:38:06 -0300
+
+configobj (4.3.1-1) unstable; urgency=low
+
+  * Initial Release (Closes: #366372)
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Sun,  7 May 2006 22:49:58 -0300
